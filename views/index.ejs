@@ -24,16 +24,16 @@
        <div class="crud">
         <ol>
             <% for (name of names) {%>
+                <li>
                 <form action="/update/<%=name._id%>" method="post">
-                    <li>
                         <input type="text" value="<%=name.name%>" name="name">
-                    </li>
-                    <button>update</button>
-
-                </form>
-                <form action="/delete/<%=name.id%>" method="post">
-                <button>Delete</button>
-                </form>
+                        <button>update</button>
+                        
+                    </form>
+                    <form action="/delete/<%=name.id%>" method="post">
+                        <button>Delete</button>
+                    </form>
+                </li>
             <%  } %>
 
         </ol>

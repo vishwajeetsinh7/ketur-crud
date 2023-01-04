@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
-const port = 3000
+const port = 3000 || process.env.PORT
 
 // import mongo model
 const Name = require('./models/crud')
