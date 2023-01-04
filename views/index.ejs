@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud APp</title>
+</head>
+<body>
+    
+    <h1>CRUD APP</h1>
+    <div class="form-container">
+        <form action="/createname" method="post">
+            <h2>Create A new Name</h2>
+            <div class="input">
+                <label for="name">Create Name</label>
+                <input type="text" name="name" id="name">
+                <button>Submit</button> 
+            </div>
+        </form>
+    </div>
+    <div class="container">
+         <h2>Showing Names</h2>
+       <div class="crud">
+        <ol>
+            <% for (name of names) {%>
+                <form action="/update/<%=name._id%>" method="post">
+                    <li>
+                        <input type="text" value="<%=name.name%>" name="name">
+                    </li>
+                    <button>update</button>
+
+                </form>
+                <form action="/delete/<%=name.id%>" method="post">
+                <button>Delete</button>
+                </form>
+            <%  } %>
+
+        </ol>
+       </div>
+    </div>
+</body>
+</html>
